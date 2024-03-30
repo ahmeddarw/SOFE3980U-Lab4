@@ -12,10 +12,10 @@ public class HelloAPIController {
 	public String hello(@RequestParam(name="name", required=false, defaultValue="World") String name) {
 		return  "Hello "+name+"!";
 	}
-	
+
 	@GetMapping("/emailAPI")
 	public APIResult getSuggestedEmail(@RequestParam(name="fname", required=false, defaultValue="John") String firstName,
-                       @RequestParam(name="lname", required=false, defaultValue="Doe") String lastName) {
+									   @RequestParam(name="lname", required=false, defaultValue="Doe") String lastName) {
 		String name=firstName+ " " +lastName;
 		String suggestedEmail=firstName+ "."+lastName+"@OntarioTechU.net";
 		return  new APIResult(name,suggestedEmail);
